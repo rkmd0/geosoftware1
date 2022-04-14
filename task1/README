@@ -1,7 +1,7 @@
 Gegeben sind ‘cities.js‘ und ‘point.js‘. ‘cities.js‘ beinhaltet ein array
 von ‘[lng, lat]‘ koordinatenpaaren (WGS84), während ‘point.js‘ einen
 geographischen Standort im gleichen Format beschreibt.
-Das Ziel der Ubung 1 ist es eine HTML-Seite zu erstellen, welche f ¨ ur ¨
+Das Ziel der Ubung 1 ist es eine HTML-Seite zu erstellen, welche für
 den in ‘point.js‘ beschriebenen Standort die Distanzen zu allen Punkten
 aus ‘cities.js‘ berechnet und auflistet. Die Punkte sollen aufsteigend
-sortiert bezuglich der Distanz zum ’point’ dargestellt werden.
+sortiert bezüglich der Distanz zum ’point’ dargestellt werden.

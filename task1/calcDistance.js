@@ -2,11 +2,11 @@
 /**
  * Geosoftware Abgabe 1
  * @author Erkam Dogan
- * @version 0.0.6
+ * @version 1.0.0
  */
 
 
-//var's for 
+//var's
 var distancemeasurment = Array.apply(null, Array[cities.length]); // "temp" Array for the unsorted result of "calcDistanc"
 var finishedcalc = ""; //creating a, for now, undefined var for future purposes
 
@@ -27,9 +27,11 @@ function distanceCalculator() {
     const φ2 = latitude2 * Math.PI/180;
     const Δφ = (latitude2 - latitude1) * Math.PI/180;
     const Δλ = (longitude2 - longitude1) * Math.PI/180;
-    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ2) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
+    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+              Math.cos(φ2) * Math.cos(φ2) *
+              Math.sin(Δλ/2) * Math.sin(Δλ/2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    const d = Math.round((R * c) * 10) / 10;; //rounding up to get "better" values
+    const d = Math.round(R * c); //rounding up to get "better" values
 
     distancemeasurment[i] = d; //measuring the distances, array isnt sorted though
     
@@ -49,7 +51,7 @@ function distanceCalculator() {
 
   return arr;
 }
-    
+   insertionSort(distancemeasurment) //starting the sorting
 
 
 
@@ -61,4 +63,4 @@ function distanceCalculator() {
   }
 
 }
-distanceCalculator(); //starting the method
+distanceCalculator(); //starting the calc.
