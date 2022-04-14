@@ -8,11 +8,12 @@
 
 //var's
 var distancemeasurment = Array.apply(null, Array[cities.length]); // "temp" Array for the unsorted result of "calcDistanc"
-var finishedcalc = ""; //creating a, for now, undefined var for future purposes
+var finishedcalc = ""; //creating for now, undefined var for future purposes
 
 var longitude1 = point[0];
 var latitude1 = point[1];
 
+//source for formula: https://www.movable-type.co.uk/scripts/latlong.html
 function distanceCalculator() {
   
 
@@ -21,8 +22,8 @@ function distanceCalculator() {
     var latitude2 = cities[i][1]; //declaration of the lat and long points to start calc. the distance
     var longitude2 = cities[i][0];
     
-    //iterating to calc. to calc. the distance for each city
-    const R = 6371; //radius of earth in meter
+    //iterating to calc. the distance for each city
+    const R = 6371; //radius of earth
     const φ1 = latitude1 * Math.PI/180; // φ, λ in radians
     const φ2 = latitude2 * Math.PI/180;
     const Δφ = (latitude2 - latitude1) * Math.PI/180;
