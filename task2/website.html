@@ -6,15 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geological Distance Calculator by Erkam</title>
     <link rel="stylesheet" href="design.css">
-    <script src="point.js"></script> 
+    <script src="point.js"></script>
+    <script src="poi.js"></script> 
     <script src="cities.js"></script> 
     <script src="calcDistance.js"></script>
 
 </head>
 <body>
-<h1>Geological Distance Calculator</h1>
+
+
+<h1>Geological Distance Calculator with different Points</h1>
+
+<p id="test"></p>
+
+<script>
+
+        function Punktberechner(){
+            let JSON_input = document.getElementById("textfeld")
+
+
+            if( isJsonString(JSON_input.value)){
+
+                if(JSON.parse(JSON_input.value).type == "Point"){
+
+                    point = JSON.parse(document.getElementById("texteld").value);
+                    distanceCalculator(point);
+
+                }
+                else {
+                    alert("wrongie input");
+                    
+                }
+                alert("wrongie input")
+
+
+            }
+        
+
+        }
+
+        function isJsonString(str) {
+
+        try{
+
+            JSON.parse(str);
+
+            } 
+
+        catch (e){
+
+        return false;
+
+        }
+
+        return true;
+
+        }
+    var x = document.getElementById("test");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+        } else {
+            x.innerHTML = "GEOLOCATION ISNT SUPPORTED BY THIS BROWSER!!!";
+
+         }
+
+        }
+        /*function showPosition(position) {
+             x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+        
+        
+        } */
+
+        function showPosition(position) {
+
+            let location = new Array(position.coords.longitude, position.coords.latitude);
+
+            location = new JSONConstructor(location, "Point");
+
+            document.getElementById("textfeld").innerHTML = JSON.stringify(location);
+
+}
+
+function JSONConstructor(array, type){
+
+    this.type = type;
+    this.coordinates = array;
+
+}   
+
+
+
+    //function Locationwriter(){
+            //document.getElementById("textfeld").innerHTML = JSON.stringify(document.getElementById("upload"));
+
+    //}
+        
+
+</script>
+
+<div>    
+    <textarea id ="textfeld" type="text" cols="26" rows="11" placeholder="Hier bitte die GeoJSON einfügen"></textarea>
+</div>
+
 <p id= "finishedcalc"></p>
 <script>document.getElementById("finishedcalc").innerHTML = finishedcalc</script>
+
+<div>
+    <p> Lets find out your coordinates!</p>
+    <button onclick="getLocation()"> Try it! </button>
+</div>
+<div>
+    <p>Button füüür Berechner</p>
+    <button onclick="Punktberechner()"> Lets caaalculate the distance </button>
+</div>
 
 </body>
 </html>

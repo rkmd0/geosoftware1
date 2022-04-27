@@ -7,23 +7,26 @@
 
 
 //var's
-var distancemeasurment = Array.apply(null, Array[cities.length]); // "temp" Array for the unsorted result of "calcDistanc"
+var distancemeasurment = Array.apply(null, Array[pois.features.length]); // "temp" Array for the unsorted result of "calcDistanc"
 var finishedcalc = ""; //creating for now, undefined var for future purposes
 
-var longitude1 = point[0];
-var latitude1 = point[1];
+
 
 //source for formula: https://www.movable-type.co.uk/scripts/latlong.html
-function distanceCalculator() {
+function distanceCalculator(NeuesPunkt) {
   
+  
+  for(var i = 0; i < pois.features.length; i++){
 
-  for(var i = 0; i < cities.length; i++){
+    var latitude1 = NeuesPunkt.coordinates[1];
+    var longitude1 = NeuesPunkt.coordinates[0];
 
-    var latitude2 = cities[i][1]; //declaration of the lat and long points to start calc. the distance
-    var longitude2 = cities[i][0];
+
+    var latitude2 = pois.features[i].geometry.coordinates[1]; //declaration of the lat and long points to start calc. the distance
+    var longitude2 = pois.features[i].geometry.coordinates[0];
     
     //iterating to calc. the distance for each city
-    const R = 6371; //radius of earth
+    const R = 6371e3; //radius of earth
     const φ1 = latitude1 * Math.PI/180; // φ, λ in radians
     const φ2 = latitude2 * Math.PI/180;
     const Δφ = (latitude2 - latitude1) * Math.PI/180;
@@ -60,8 +63,11 @@ function distanceCalculator() {
   // iterating through the array to add it as text with breakpoints
   for(var i2=0; i2<distancemeasurment.length; i2++){
 
-    finishedcalc = finishedcalc + distancemeasurment[i2] + " km" + "<br />";
+    finishedcalc = finishedcalc + distancemeasurment[i2] + " Meter" + "<br />";
   }
 
 }
-distanceCalculator(); //starting the calc.
+//distanceCalculator(); //starting the calc.
+
+
+

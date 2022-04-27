@@ -4,11 +4,12 @@ body{
 
 h1{
     font-size: 44px;
-    text-align: center;
+    text-align: left;
 }
 
 p{
-    text-align: center;
+    text-align: left;
     font-size: 24px;
 
 }
+
