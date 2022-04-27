@@ -2,14 +2,25 @@
 /**
  * Geosoftware Abgabe 1
  * @author Erkam Dogan
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 
+ // title for our website (display and popup)
+ document.title = "Assignment 2 By Erkam";
+ alert(document.title);
+
+
+ 
+
 //var's
 var distancemeasurment = Array.apply(null, Array[pois.features.length]); // "temp" Array for the unsorted result of "calcDistanc"
-var finishedcalc = ""; //creating for now, undefined var for future purposes
 
+/**
+  *@function distanceCalculator
+  *@desc calculates the distance between 2 points
+  *@param NeuesPunkt
+  */
 
 
 //source for formula: https://www.movable-type.co.uk/scripts/latlong.html
@@ -42,19 +53,31 @@ function distanceCalculator(NeuesPunkt) {
     
   }
   insertionSort(distancemeasurment) //starting the sorting
-  //function to sort array with insertionsort -> source: https://www.section.io/engineering-education/sorting-algorithms-in-js/#insertion-sort
+  
   
 
-
+  var finishedcalc = ""; //creating for now, undefined var for future purposes
   // iterating through the array to add it as text with breakpoints
   for(var i2=0; i2<distancemeasurment.length; i2++){
 
     finishedcalc = finishedcalc + distancemeasurment[i2] + " Meter" + "<br />";
   }
+  
   document.getElementById("finishedcalc").innerHTML = finishedcalc
 }
-//distanceCalculator(); //starting the calc.
-function insertionSort(arr){
+//distanceCalculator();
+//function to sort array with insertionsort -> source: https://www.section.io/engineering-education/sorting-algorithms-in-js/#insertion-sort
+//slightly changed to an arrow function
+
+/**
+  *@function insertionSort
+  *@desc known sort algorithm
+  *@param arr
+  *@returns arr
+  */
+
+
+let insertionSort = (arr) => { 
   for(let i = 1; i < arr.length;i++){
       for(let j = i - 1; j > -1; j--){
           if(arr[j + 1] < arr[j]){
