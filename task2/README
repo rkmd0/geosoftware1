@@ -1,3 +1,4 @@
+#Task 2
 Verwendet euer Ergebnis der letzten Aufgabe, und erweitert es um
 ein Eingabefeld. Zusätzlich erhaltet Ihr eine neue Datei: poi.js, welche einige Points-of-interest in der Umgebung Münster im GeoJSON-Format beinhaltet.
 Diese soll nun anstelle von cities.js verwendet werden.

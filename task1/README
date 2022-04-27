@@ -1,3 +1,4 @@
+# Task 1
 Gegeben sind ‘cities.js‘ und ‘point.js‘. ‘cities.js‘ beinhaltet ein array
 von ‘[lng, lat]‘ koordinatenpaaren (WGS84), während ‘point.js‘ einen
 geographischen Standort im gleichen Format beschreibt.
