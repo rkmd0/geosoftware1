@@ -19,18 +19,18 @@ var distancemeasurment = Array.apply(null, Array[pois.features.length]); // "tem
 /**
   *@function distanceCalculator
   *@desc calculates the distance between 2 points
-  *@param NeuesPunkt
+  *@param NewLocalPoint
   */
 
 
 //source for formula: https://www.movable-type.co.uk/scripts/latlong.html
-function distanceCalculator(NeuesPunkt) {
+function distanceCalculator(NewLocalPoint) {
     
   
   for(var i = 0; i < pois.features.length; i++){
 
-    var latitude1 = NeuesPunkt.coordinates[1];
-    var longitude1 = NeuesPunkt.coordinates[0];
+    var latitude1 = NewLocalPoint.coordinates[1];
+    var longitude1 = NewLocalPoint.coordinates[0];
 
 
     var latitude2 = pois.features[i].geometry.coordinates[1]; //declaration of the lat and long points to start calc. the distance
