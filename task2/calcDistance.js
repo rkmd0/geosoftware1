@@ -14,7 +14,7 @@ var finishedcalc = ""; //creating for now, undefined var for future purposes
 
 //source for formula: https://www.movable-type.co.uk/scripts/latlong.html
 function distanceCalculator(NeuesPunkt) {
-  
+    
   
   for(var i = 0; i < pois.features.length; i++){
 
@@ -41,23 +41,9 @@ function distanceCalculator(NeuesPunkt) {
     
     
   }
-
+  insertionSort(distancemeasurment) //starting the sorting
   //function to sort array with insertionsort -> source: https://www.section.io/engineering-education/sorting-algorithms-in-js/#insertion-sort
-  function insertionSort(arr){
-    for(let i = 1; i < arr.length;i++){
-        for(let j = i - 1; j > -1; j--){
-            if(arr[j + 1] < arr[j]){
-                [arr[j+1],arr[j]] = [arr[j],arr[j + 1]];
-
-            }
-        }
-    };
-
-  return arr;
-}
-   insertionSort(distancemeasurment) //starting the sorting
-
-
+  
 
 
   // iterating through the array to add it as text with breakpoints
@@ -65,9 +51,20 @@ function distanceCalculator(NeuesPunkt) {
 
     finishedcalc = finishedcalc + distancemeasurment[i2] + " Meter" + "<br />";
   }
-
+  document.getElementById("finishedcalc").innerHTML = finishedcalc
 }
 //distanceCalculator(); //starting the calc.
+function insertionSort(arr){
+  for(let i = 1; i < arr.length;i++){
+      for(let j = i - 1; j > -1; j--){
+          if(arr[j + 1] < arr[j]){
+              [arr[j+1],arr[j]] = [arr[j],arr[j + 1]];
 
+          }
+      }
+  };
+
+return arr;
+}
 
 

@@ -29,19 +29,19 @@
 
                 if(JSON.parse(JSON_input.value).type == "Point"){
 
-                    point = JSON.parse(document.getElementById("texteld").value);
+                    point = JSON.parse(document.getElementById("textfeld").value);
                     distanceCalculator(point);
 
                 }
                 else {
                     alert("wrongie input");
                     
-                }
-                alert("wrongie input")
-
-
+                }    
+                
             }
-        
+            else {
+                alert("wrongie input")
+            }
 
         }
 
@@ -114,7 +114,7 @@ function JSONConstructor(array, type){
 </div>
 
 <p id= "finishedcalc"></p>
-<script>document.getElementById("finishedcalc").innerHTML = finishedcalc</script>
+
 
 <div>
     <p> Lets find out your coordinates!</p>
