@@ -127,7 +127,7 @@ function sortByDistance(point, pointArray) {
     
     output.splice(j, 0, newPOIS);
   }
-  // Die nächstgelegene Haltestelle abspeichern
+  // saving the next station
   nextBuststation = output[0];
 
   // calc. the next departures
