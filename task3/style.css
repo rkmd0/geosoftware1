@@ -1,0 +1,28 @@
+div.a {
+  text-align: center;
+  font-family: Consolas;
+  padding-top: 40px;
+  padding-right: 30%;
+  padding-left: 30%;
+}
+
+div.script {
+  text-align: left;
+  font-family: Consolas;
+  font-size: 10px;
+}
+
+th{
+  background-color: #a9a9a9;
+  color: rgb(255, 255, 255);
+}
+table, th, td {
+  padding: 10px;
+    border: 2px solid #A9A9A9;
+    border-color: solid black;
+    border-collapse: collapse;
+}
+.button {
+	text-align: center;
+ 	font-family: Consolas;
+}

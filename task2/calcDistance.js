@@ -77,6 +77,7 @@ function distanceCalculator(NewLocalPoint) {
   */
 
 
+
 let insertionSort = (arr) => { 
   for(let i = 1; i < arr.length;i++){
       for(let j = i - 1; j > -1; j--){

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>GeoSoftware1 Aufgabenstellung 3</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="point.js"></script>
+  <script src="script.js"></script>
+   
+
+</head>
+<body onload="onLoad()">
+
+
+  <div class="a" align="center">
+  <h1>GeoSoftware1 Aufgabenstellung 3</h1>
+
+  <div>
+  	course: Geosoftware I SoSe 2022 <br>
+  	author: Erkam Dogan (Inspired by the example template of Assignment 2).<br> <br>
+
+
+
+    <hr>
+
+    current position in geojson: <br>
+    <textarea rows="2" id="userPosition"></textarea><br>
+    <button id="refreshBtn" class="button" type="button">refresh the table</button>
+    <button id="getLocationBtn" class="button" type="button">Getter for User location</button>
+  </div>
+
+  <br>
+
+  <div id="geoJSON" class="script" align="center">
+  </div>
+
+  <br>
+
+  <table style="width:90%" align="center" id="resultTable">
+    <tr>
+      <th>Coordinates</td>
+      <th>Station-Name</td>
+      <th>Direction</td>
+      <th>Distance (m)</th>
+    </tr>
+  </table>
+
+  <p id="AbfahrtVon"> Departure from:</p>
+
+  <table style="width:90%" align="center" id="resultTableAbfahrt">
+    <tr>
+      <th>Line</td>
+      <th>Station</td>
+      <th>Direction</td>
+      <th>Departure Time</th>
+    </tr>
+  </table>
+
+  </div>
+</body>
+</html>
