@@ -35,9 +35,17 @@ function onLoad() {
   getStations();
 }
 
+
+
+//##############################################################################
+//## CLASSES
+//##############################################################################
+
+
+
 /**
- * @class Haltestelle
- * @desc Definition der Attribute von einer Haltestelle
+ * @class Station
+ * @desc object of a station with its attributes
  * @param {*} nr number of station
  * @param {*} name name of station
  * @param {*} richtung direction which it will drive to
@@ -232,7 +240,7 @@ function GIVE_TABLE_FOR_RESULTS(results) {
  * @param {*} responseArray Array of the attributes (table)
  */
 function TIME_FOR_DEPARTURE(responseArray) {
-  var table = document.getElementById("resultTableAbfahrt");
+  var table = document.getElementById("RESULT_OF_DEPART");
   for ( var j = 0; j < responseArray.length; j++) {
     var newRow = table.insertRow(j + 1);
     var cel1 = newRow.insertCell(0);
@@ -348,9 +356,9 @@ function getAbfahrten(NEXT_STATION) {
 function LEFT_TIME(seconds) {
   var CURRENT_DATE = new Date();
   CURRENT_DATE = CURRENT_DATE.getTime() / 1000;
-  var verbleibendeZeit = seconds - CURRENT_DATE;
-//  var verbleibendeZeitMin = Math.floor(verbleibendeZeit / 60);
-//  var verbleibendeZeitSek = Math.round(verbleibendeZeit % 60);
-  var verbleibendeZeitZ = verbleibendeZeitMin + "Min " + verbleibendeZeitSek + "Sek";
-  return verbleibendeZeitZ
+  var LEFT_TIME_FOR_B = seconds - CURRENT_DATE;
+  var LEFT_TIME_FOR_B_IN_MINUTES = Math.floor(LEFT_TIME_FOR_B / 60);
+  var LEFT_TIME_FOR_B_IN_SECONDS = Math.round(LEFT_TIME_FOR_B % 60);
+  var FINAL_LEFT_TIME = LEFT_TIME_FOR_B_IN_MINUTES + "Min " + LEFT_TIME_FOR_B_IN_SECONDS + "Sec";
+  return FINAL_LEFT_TIME
 }
