@@ -21,7 +21,7 @@ erfüllen.
 
 ####### Additional Readme #######
 
-For some reason (my own Hardware maybe?) the get location feature has inconsistent running time means that it sometimes needs significantly more time than it needs some other times. This was - as far as I know - already a thing in the last task.
+For some reason (my own Hardware maybe?) the get-location feature has inconsistent running time means that it sometimes needs significantly more time than it needs some other times. This was - as far as I know - already a thing in the last task.
 The Original site had some flaws that had to be changed for the site to work. Here I did some structural changes. The logic between the old and newer files remain the same (source, way of working and complexity).
 Sadly, due to lack of time, there was no chance to excessively test the last part of the code.
 
