@@ -1,5 +1,5 @@
 /**
-* Musterlösung zu Aufgabe 3, Geosoft 1, SoSe 2020
+* lösung zu Aufgabe 4, Geosoft 1, SoSe 2020
 * @author {Erkam Dogan}   matr.Nr.: {508 236}
 */
 
@@ -14,7 +14,7 @@
 var busStops = [];
 var point;
 var departureList;
-
+var m_pointer = [];
 
 /**
 * @function onLoad function that is executed when the page is loaded
@@ -483,8 +483,26 @@ class GeoJSON{
 
 }
 
+
+
+
 //##############################################################################
 //## OBJECTS
 //##############################################################################
 const geoJSON = new GeoJSON();
 const busAPI = new BusAPI();
+
+
+//map
+var map = L.map('map').setView([51.961, 7.628], 13);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'blablaineedtousegitignore'
+}).addTo(map);
+
+L.marker([7.595737,51.969508]).addTo(map)
