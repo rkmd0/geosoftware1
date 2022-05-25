@@ -5,75 +5,69 @@
   <title>GeoSoftware1 Assignment 4</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="crossorigin=""/>
-
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-  crossorigin=""></script>
-
-
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
 </head>
+
 <body onload="onLoad()">
-  <div id="map"></div>
-  
-  
-  
   <script src="point.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  
-  
 
-
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
   <div class="a" align="center">
-  <h1>GeoSoftware1 Assignment 4</h1>
+    <h1>GeoSoftware1 Assignment 4</h1>
 
-  <div>
-  	assignment: 04<br>
-  	course: Geosoftware I SoSe 2022 <br>
-  	Inspired by Felix Niebl's and Noel Schnierer's template. <br> <br>
+    <div>
+      <hr>
+      assignment: 04
+      course: Geosoftware I SoSe 2022 <br>
+      template by: Noel Schnierer, Felix Niebl, Nick Jakuschona <br> <br>
 
-  	---TODO--
+      Diese Seite zeigt alle Bushaltestellen (mit deren Abfahrtzeiten) der Stadt Münster und die eigene Position auf einer Leaflet Karte an.
+  
+      <hr>
+      <hr>
+      <hr>
+      <div id="mapid"></div>
+      <br>
+      <button id="myGeoLocation" class="button" type="button">my geolocation</button>
+      <button onClick="window.location.reload();" class="button" type="button">refresh</button>
+    </div>
 
+    <br>
+    refresh will immediatly refresh the whole site, which is probably the best way to use the site after each drawn polygon.
     <hr>
-    
 
-    current position geojson: <br>
-    <textarea rows="2" id="userPosition"></textarea><br>
-    <button class="button" type="button" onclick="refresh()">refresh</button>
-    <button class="button" type="button" onclick="DocumentInterface.getLocation()">my geolocation</button>
-  </div>
+    <div id="geoJSON" class="script" align="center">
+    </div>
 
-  <br>
-  <div id="nextDepartures">
-    <p id="nextDeparturesHeader"></p>
-    <table style="width:100%" align="center" id="nextDeparturesTable">
+    <br>
+    <p>Depatures in the next hour from the nearest bus stop:</p>
+    <table style="width:75%" align="center" id="depatureTable">
       <tr>
-        <th>line nr</th>
-        <th>Bus line</th>
-        <th>departure</th>
+        <th>Busline</th>
+        <th>Last stop</th>
+        <th>Time of departure</th>
       </tr>
-
     </table>
-  </div>
-  <br>
-
-  <table style="width:75%" align="center" id="resultTable">
-    <tr>
-      <th>Bus stop name</td>
-      <th>Coordinates</td>
-      <th>Distance (in meters)</td>
-    </tr>
-  </table>
-
-  <div id="geoJSON" class="script" align="center">
-  </div>
-  <br>
+    <br>
+    <p>Nearest bus stops in ascending order sorted by distance:</p>
+    <table style="width:75%" align="center" id="nextDepartureTable">
+      <tr>
+        <th>Bus stop</td>
+        <th>Coordinates (la/lo)</td>
+        <th>Direction (E/A)</td>
+        <th>Distance in m</td>
+      </tr>
+    </table>
 
   </div>
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -10,3 +10,5 @@ von Markern. Implementiert die Möglichkeit, mit Leaflet-draw
 (leaflet.github.io/Leaflet.draw) eine Bounding Box zu zeichnen, mit
 welcher eine Auswahl von Bushaltestellen gewählt werden kann, welche alleine angezeigt werden. Verwendet die turf-js Library zur bestimmung der Haltestellen die sich in der Auswahlbox befinden (Beispiel:
 turfjs.org/docs/#booleanPointInPolygon).
+
+

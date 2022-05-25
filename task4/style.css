@@ -13,8 +13,8 @@ div.script {
 }
 
 th{
-  background-color: #A9A9A9;
-  color: white;
+  background-color: beige;
+  color: black;
 }
 table, th, td {
   padding: 10px;
@@ -27,6 +27,7 @@ table, th, td {
  	font-family: Consolas;
 }
 
-#map{
-  height: 400px;
+#mapid {
+  height: 560px;
+  width: 531;
 }
