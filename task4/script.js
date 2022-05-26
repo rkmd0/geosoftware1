@@ -1,5 +1,6 @@
-/** Musterlösung zu Aufgabe 2, Geosoft 1, SoSe 2022
- * * with parts of the "Beispiellösung2 given in "https://www.uni-muenster.de/LearnWeb/learnweb2/mod/resource/view.php?id=2535714"
+/** Lösung zu Aufgabe 4, Geosoft 1, SoSe 2022
+ * * with parts of the "Beispiellösung given in "https://www.uni-muenster.de/LearnWeb/learnweb2/mod/resource/view.php?id=2535714"
+ * * and https://www.uni-muenster.de/LearnWeb/learnweb2/mod/resource/view.php?id=2520550
  * @author {Erkam Dogan}   matr.Nr.: {508236}
  */
 
@@ -84,7 +85,7 @@
    }
  }
  
-
+//just some VL-scripts that I used to text some stuff before
  /* .then(response => {
     let res = response.json() // return a Promise as a result
     console.log(res)
@@ -317,7 +318,7 @@
      "type": "FeatureCollection",
      "features": []
    };
-   //skelton of a valid Feature 
+   //skeleton of a valid Feature 
    let pointFeature = {
      "type": "Feature",
      "properties": {},
@@ -370,7 +371,7 @@
  }).addTo(map);
  
  // user position (iconURL from an older project of mine (SAIM))
- var standortIcon = L.icon({
+ var myGeoLocationIcon = L.icon({
    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
    iconSize: [10, 15], 
    iconAnchor: [0, 0], 
@@ -395,7 +396,7 @@
    var lat = position.coords.latitude;
    var lng = position.coords.longitude;
    var marker = L.marker([lat, lng], {
-     icon: standortIcon
+     icon: myGeoLocationIcon
    }).addTo(map);
    marker.bindPopup("My Location is: " + lat + " " + lng);
    marker.openPopup();
