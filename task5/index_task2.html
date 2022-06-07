@@ -5,25 +5,59 @@
   <title>GeoSoftware1 Assignment 2</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="js_02/style.css">
-
-
-</head>
-<body onload="onLoad()">
   <script src="js_02/pois.js"></script>
   <script src="js_02/point.js"></script>
   <script src="js_02/script.js"></script>
+  <link rel="stylesheet" href="data_intro_page/intro_style.css">
+        <link rel="icon" href="https://www.uni-muenster.de/imperia/md/content/allgemein/farbunabhaengig/favicon.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
+
+</head>
+<body onload="onLoad()">
+   <!-- starting with the navigation bar-->
+   <nav class ="navbar navbar-expand-md navbar-light bg-success sticky-top">
+    <div class="container-fluid"
+        <a class="navbar-brand" href="google.com"><img src="data_intro_page/ifgi_logo.png"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="=navBarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="index_starting_page.html">Intro</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index_task2.html">Task 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_task4.html">Task 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_starting_page.html">Impressum</a>
+                </li>
+        </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid bg-dark">
+  <!-- source: https://bootstrapcreative.com/pattern/jumbotron-with-blurry-background-image/-->
+  <div class="jumbotron-background">
+      <img src="https://wallpaperaccess.com/full/969773.jpg" class="blurred ">
+    </div>
+
+
+  <div class="container text-light">
+  <h1 class="display-4">GeoSoftware1 Assignment 2</h1>
+  <p class="lead">course: Geosoftware I SoSe 2022 <br>
+  	original authors: Noel Schnierer, Felix Niebl, Nick Jakuschon</p>
+  <hr class="my-3">
+  <p>Diese Seite nimmt eine Liste von POIs im GeoJSON-Format und einen Nutzerdefinierten Standort entgegen, und berechnet die distanz vom Standort zu allen POIs. Die POIs werden, mit aufsteigender Distanz sortiert, in einer Tabelle dargestellt.</p>
+  </div>
+  </div>
+
 
   <div class="a" align="center">
-  <h1>GeoSoftware1 Assignment 2</h1>
-
-  <div>
-  	assignment: 02<br>
-  	course: Geosoftware I SoSe 2022 <br>
-  	original authors: Noel Schnierer, Felix Niebl, Nick Jakuschona <br> <br>
-
-    Diese Seite nimmt eine Liste von POIs im GeoJSON-Format und einen Nutzerdefinierten Standort entgegen, und berechnet die distanz vom Standort zu allen POIs. Die POIs werden, mit aufsteigender Distanz sortiert, in einer Tabelle dargestellt.
-
-    <hr>
+  
 
     current position geojson: <br>
     <textarea rows="2" id="userPosition"></textarea><br>
@@ -47,5 +81,15 @@
   </table>
 
   </div>
+  <p>
+
+  </p>
+  <footer class="bg-success text-center text-lg-start"> <!--BIG PROBLEM(?) footer is kind of "bugged" -> im using 2 different screenresolutions (one (second monitor for pc) is significantly bigger) and on second the footer isnt at the end of the screen but rather inbetween the end and the middle - really ugly I know but my first monitor doesnt have this problem soo..-->
+    <!-- how ^ feels like part 2 : https://imgur.com/a/04yEo6X -->
+<div class="text-center p-3" style="background-color: rgba(165, 158, 158, 0.2);">
+<a class="text-dark" href="index_starting_page.html">Impressum</a>
+</div>
+
+</footer>
 </body>
 </html>
