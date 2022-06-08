@@ -17,6 +17,8 @@ div.a {
   box-shadow: grey;
 }
 
+
+/* source https://www.w3schools.com/cssref/css3_pr_mediaquery.asp */
 /* making the map responsive to the screen -> above 601 */
 @media only screen and (min-width: 601px) {
   #mainMap {
