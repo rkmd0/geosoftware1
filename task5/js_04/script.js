@@ -408,7 +408,7 @@ class DocumentInterface{
   static drawBusStopTable(results) {
     var table = document.getElementById("resultTable");
     //creates the Table with the distances
-    for (var j = 0; j < results.length; j++) {
+    for (var j = 0; j < 10; j++) {
       var newRow = table.insertRow(j + 1);
       var cel1 = newRow.insertCell(0);
       var cel2 = newRow.insertCell(1);
