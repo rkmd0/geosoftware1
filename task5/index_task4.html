@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>GeoSoftware1 Assignment 4</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="js_04/style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+  crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+  crossorigin=""></script>
+  <script src="js_04/pointcloud.js"></script>
+  <script src="js_04/point.js"></script>
+  <link rel="stylesheet" href="data_intro_page/intro_style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+  <link rel="icon" href="https://www.uni-muenster.de/imperia/md/content/allgemein/farbunabhaengig/favicon.ico">
+
+  <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+  <script defer src="js_04/script.js"></script>
+
+</head>
+<body onload="onLoad()">
+  <!-- starting with the navigation bar-->
+  <nav class ="navbar navbar-expand-md navbar-light bg-success sticky-top">
+    <div class="container-fluid"
+        <a class="navbar-brand" href="#"><img src="data_intro_page/ifgi_logo.png"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="=navBarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="index_starting_page.html">Intro</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index_task2.html">Task 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_task4.html">Task 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_starting_page.html">Impressum</a>
+                </li>
+        </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid bg-dark">
+  <!-- source: https://bootstrapcreative.com/pattern/jumbotron-with-blurry-background-image/-->
+  <div class="jumbotron-background">
+      <img src="https://wallpaperaccess.com/full/969778.jpg" class="blurred ">
+    </div>
+
+
+  <div class="container text-light">
+  <h1 class="display-4">GeoSoftware1 Assignment 4</h1>
+  <p class="lead">course: Geosoftware I SoSe 2022 <br>
+  	js-script authors: Noel Schnierer, Felix Niebl</p>
+  <hr class="my-3">
+  <p>Diese Seite nimmt eine Liste von POIs im GeoJSON-Format und einen Nutzerdefinierten Standort entgegen, und berechnet die distanz vom Standort zu allen Haltestellen. Gleichzeitig werden die Abfahrtszeiten der jeweiligen Haltestellen angegeben.</p>
+  </div>
+  </div>
+  <div align="center">
+    <h1>GeoSoftware1 Assignment 4</h1>
+
+    <div>
+      <textarea rows="3" cols="64" id="userPosition"></textarea><br>
+      <button class="button" type="button" onclick="refresh()">refresh</button>
+      <button class="button" type="button" onclick="DocumentInterface.getLocation()">my geolocation</button>
+    </div>
+
+    <br>
+    <div id="nextDepartures">
+      <p id="nextDeparturesHeader"></p>
+      <table style="width:100%" align="center" id="nextDeparturesTable">
+        <tr>
+          <th>line nr</th>
+          <th>Bus line</th>
+          <th>departure</th>
+        </tr>
+
+      </table>
+    </div>
+
+    <br>
+
+    <div id="mainMap"></div>
+
+    <br>
+
+    <table style="width:75%" align="center" id="resultTable">
+      <tr>
+        <th>Bus stop name</td>
+          <th>Coordinates</td>
+            <th>Distance (in meters)</td>
+              </tr>
+            </table>
+
+          </div>
+          <br>
+
+        </div>
+        
+        <p>
+
+        </p>
+        <footer class="bg-success text-center text-lg-start"> <!--BIG PROBLEM(?) footer is kind of "bugged" -> im using 2 different screenresolutions (one (second monitor for pc) is significantly bigger) and on second the footer isnt at the end of the screen but rather inbetween the end and the middle - really ugly I know but my first monitor doesnt have this problem soo..-->
+          <!-- how ^ feels like part 2 : https://imgur.com/a/04yEo6X -->
+      <div class="text-center p-3" style="background-color: rgba(165, 158, 158, 0.2);">
+      <a class="text-dark" href="index_starting_page.html">Impressum</a>
+      </div>
+      
+      </footer>
+
+      </body>
+      </html>

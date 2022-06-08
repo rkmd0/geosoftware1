@@ -1,0 +1,55 @@
+html, body {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+div.a {
+  text-align: center;
+  font-family: Consolas;
+  padding-top: 40px;
+  padding-right: 25%;
+  padding-left: 25%;
+}
+#mainMap{
+  height: 600px;
+  width: 600px;
+  box-shadow: 5px 5px 10px;
+  box-shadow: grey;
+}
+
+/* making the map responsive to the screen -> above 601 */
+@media only screen and (min-width: 601px) {
+  #mainMap {
+ width: 50%;
+  }
+ }
+/* making the map responsive to the screen -> under 600 */
+ @media only screen and (max-width: 600px) {
+  #mainMap {
+ width: 100%;
+  }
+ }
+
+div.script {
+  text-align: left;
+  font-family: Consolas;
+  font-size: 10px;
+}
+
+th{
+  background-color: #A9A9A9;
+  color: white;
+}
+table, th, td {
+  padding: 10px;
+    border: 2px solid #A9A9A9;
+    border-color: solid black;
+    border-collapse: collapse;
+}
+
+
+
+.button {
+	text-align: center;
+ 	font-family: Consolas;
+}
