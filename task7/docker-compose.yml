@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    container_name: aufgabe7
+    build: .
+    image: jonthnm/aufgabe7
+    ports:
+      - 5000:5000 # forward webserver on 5000-http port
+    depends_on:
+      - mongoservice
+
+  mongoservice:
+    container_name: mongo 
+    image: mongo # image retrieved from docker hub
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongo-volume:/data/db
+
+  mongoexpressservice: 
+    image: mongo-express # image retrieved from docker hub
+    restart: always
+    ports: 
+      - '8081:8081'
+    depends_on: 
+      - mongoservice
